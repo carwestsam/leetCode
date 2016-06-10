@@ -1,57 +1,35 @@
-class Node(object):
-    def __init__(self, value):
-        self.val = value
-        self.next = None
-
-    def solve(self, target):
-        if self.val == "*":
-            return [self, self.next]
-        elif self.val == "?":
-            if len(target) == 1:
-                return [self.next]
-            else:
-                return []
-        elif self.val == target:
-            return [self.next]
-        else:
-            return []
-
-    @classmethod
-    def solveBluk(cls, status, target):
-        scope = []
-        if target == "":
-            scope.extend(status)
-
-        for statu in status:
-            scope.extend(statu.solve(target))
-        return scope
-
 
 class Solution(object):
-    def isMatch(self, s, p):
+    def match(self, source, pattern, si):
 
-        auto = []
-        terminal = Node("$terminal$")
+        if len(source) < si + len(pattern):
+            return False
+
+        for idx in range(len(pattern)):
+            if pattern[idx] != '?':
+                if pattern[idx] != source[si+idx]:
+                    return False
+
+        return True
+
+    def isMatch(self, s, p):
+        s = '^' + s + '$'
+        p = '^' + p + '$'
+        patterns = []
+
+        pattern = ''
 
         for char in p:
-            node = Node(char)
-            auto.append(node)
+            if p == '*':
+                if len(pattern) != 0:
+                    patterns.append(pattern)
+                    pattern = ''
+            else :
+                pattern += char
 
-        auto.append(terminal)
+        patterns.append(pattern)
 
-        for idx in range(len(auto)-1):
-            auto[idx].next = auto[idx+1]
+        if len(patterns) == 1:
+            return self.match(s,p,0)
 
-        start = auto[0]
-        scope = Node.solveBluk([start], "")
 
-        for char in s:
-            scope = Node.solveBluk(scope, char)
-            if len(scope) == 0:
-                return False
-
-        for statu in scope:
-            if statu == terminal:
-                return True
-
-        return False

@@ -24,3 +24,6 @@ class TestSolution(TestCase):
     self.assertTrue(self.sol.isMatch("aa", "a*"))
     self.assertTrue(self.sol.isMatch("ab", "?*"))
     self.assertFalse(self.sol.isMatch("aab", "c*a*b"))
+
+  def suit_tle(self):
+    self.assertTrue(self.sol.isMatch("abbabbbaabaaabbbbbabbabbabbbabbaaabbbababbabaaabbab", "*aabb***aa**a******aa*"))
