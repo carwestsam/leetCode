@@ -13,4 +13,7 @@ class TestSolution(TestCase):
     self.assertTrue(self.sol.isMatch("123", "123"))
     self.assertFalse(self.sol.isMatch("321", "123"))
 
-
+  def test_question_mark(self):
+    self.assertTrue(self.sol.isMatch("a","?"))
+    self.assertFalse(self.sol.isMatch("?", "a"))
+    self.assertFalse(self.sol.isMatch("", "?"))
