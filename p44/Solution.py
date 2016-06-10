@@ -9,13 +9,8 @@ class Node(object):
         elif self.val == "?":
             if len(target) == 1:
                 return [self.next]
-            else :
+            else:
                 return []
-        # elif self.val == "$terminal$":
-        #     if target == "":
-        #         return [self]
-        #     else:
-        #         return []
         elif self.val == target:
             return [self.next]
         else:
