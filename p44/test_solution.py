@@ -17,3 +17,10 @@ class TestSolution(TestCase):
     self.assertTrue(self.sol.isMatch("a","?"))
     self.assertFalse(self.sol.isMatch("?", "a"))
     self.assertFalse(self.sol.isMatch("", "?"))
+
+  def test_star_mark(self):
+    self.assertTrue(self.sol.isMatch("", "*"))
+    self.assertTrue(self.sol.isMatch("aa", "*"))
+    self.assertTrue(self.sol.isMatch("aa", "a*"))
+    self.assertTrue(self.sol.isMatch("ab", "?*"))
+    self.assertFalse(self.sol.isMatch("aab", "c*a*b"))

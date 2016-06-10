@@ -4,13 +4,32 @@ class Node(object):
         self.next = None
 
     def solve(self, target):
-        if self.val == "?":
-            return self.next
+        if self.val == "*":
+            return [self, self.next]
+        elif self.val == "?":
+            if len(target) == 1:
+                return [self.next]
+            else :
+                return []
+        # elif self.val == "$terminal$":
+        #     if target == "":
+        #         return [self]
+        #     else:
+        #         return []
         elif self.val == target:
-            return self.next
+            return [self.next]
         else:
-            return None
+            return []
 
+    @classmethod
+    def solveBluk(cls, status, target):
+        scope = []
+        if target == "":
+            scope.extend(status)
+
+        for statu in status:
+            scope.extend(statu.solve(target))
+        return scope
 
 
 class Solution(object):
@@ -29,10 +48,15 @@ class Solution(object):
             auto[idx].next = auto[idx+1]
 
         start = auto[0]
+        scope = Node.solveBluk([start], "")
 
         for char in s:
-            start = start.solve(char)
-            if start is None:
+            scope = Node.solveBluk(scope, char)
+            if len(scope) == 0:
                 return False
 
-        return start == terminal
+        for statu in scope:
+            if statu == terminal:
+                return True
+
+        return False
