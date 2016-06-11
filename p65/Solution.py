@@ -7,6 +7,8 @@ class Solution(object):
         :rtype: bool
         """
 
+        s = re.sub('(^[ ]*)|([ ]*$)', '', s)
+
         if s == "-0":
             return False
 
