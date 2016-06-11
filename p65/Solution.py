@@ -9,7 +9,7 @@ class Solution(object):
 
         s = re.sub('(^[ ]*)|([ ]*$)', '', s)
 
-        if not ( re.match('^-0+([.]0+)$', s) is None) :
+        if not ( re.match('^-0+([.]0+)?$', s) is None) :
             return False
 
         result = re.match(r'^[-]?([0-9]|([1-9]\d+))([.]\d+)?$', s)
