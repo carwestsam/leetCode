@@ -32,3 +32,15 @@ class TestSolution(TestCase):
 
     self.assertFalse(self.sol.isNumber(" 1 23"))
 
+  def test_float_numbers(self):
+    self.assertTrue(self.sol.isNumber("1.2"))
+    self.assertTrue(self.sol.isNumber("123.2321"))
+    self.assertTrue(self.sol.isNumber("-123.2321"))
+    self.assertTrue(self.sol.isNumber("0.2321"))
+    self.assertTrue(self.sol.isNumber("0.2321"))
+    self.assertTrue(self.sol.isNumber("-0.2321"))
+    self.assertTrue(self.sol.isNumber("-0.00000001"))
+
+    self.assertFalse(self.sol.isNumber("-0.00000000"))
+    self.assertFalse(self.sol.isNumber("0.00000000x"))
+    self.assertFalse(self.sol.isNumber("\t\20.00000000x"))
