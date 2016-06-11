@@ -12,4 +12,4 @@ class Solution(object):
         if s == "-0":
             return False
 
-        return re.match(r'^[-]?\d+$', s)
+        return re.match(r'^[-]?(0|([1-9]\d+))$', s)
