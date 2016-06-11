@@ -1,3 +1,5 @@
+import re
+
 class Solution(object):
     def isNumber(self, s):
         """
@@ -5,4 +7,4 @@ class Solution(object):
         :rtype: bool
         """
 
-        return False
+        return re.match(r'\d', s)
