@@ -7,4 +7,7 @@ class Solution(object):
         :rtype: bool
         """
 
-        return re.match(r'\d', s)
+        if s == "-0":
+            return False
+
+        return re.match(r'^[-]?\d+$', s)
