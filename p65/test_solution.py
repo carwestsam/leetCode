@@ -52,3 +52,11 @@ class TestSolution(TestCase):
     self.assertTrue(self.sol.isNumber("2e-253213213"))
 
     self.assertFalse(self.sol.isNumber("2e25feaf3213213"))
+
+  def test_example(self):
+    self.assertTrue(self.sol.isNumber("0"))
+    self.assertTrue(self.sol.isNumber(" 0.1 "))
+    self.assertTrue(self.sol.isNumber("2e10"))
+
+    self.assertFalse(self.sol.isNumber("abc"))
+    self.assertFalse(self.sol.isNumber("1 a"))
