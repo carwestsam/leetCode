@@ -9,16 +9,17 @@ class Solution(object):
 
         s = re.sub('(^[ ]*)|([ ]*$)', '', s)
 
-        nonZeroDigit = '\d+'
+        digit = '\d+'
 
         if not ( re.match('^-0+([.]0+)?$', s) is None) :
             return False
 
-        float = "([.]\d+)?([e][-]?" + nonZeroDigit + ")?$"
+        powerPart = "([e][-]?" + digit + ")?"
+        float = "([.]\d+)?"
 
-        if not ( re.match(float, s) is None ) and not (re.match('^[.]', s) is None) :
+        if not ( re.match(float + powerPart + '$', s) is None ) and not (re.match('^[.]', s) is None) :
             return True
 
-        result = re.match("^[-]?(" + nonZeroDigit + ")" + float, s)
+        result = re.match("^[-]?(" + digit + ")((" + float + ")|[.])" + powerPart + '$', s)
 
         return not (result is None)
