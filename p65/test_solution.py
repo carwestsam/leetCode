@@ -24,8 +24,6 @@ class TestSolution(TestCase):
     self.assertFalse(self.sol.isNumber("--1"))
     self.assertFalse(self.sol.isNumber("-12fs21"))
     self.assertFalse(self.sol.isNumber("x12fs"))
-    self.assertFalse(self.sol.isNumber("01"))
-    self.assertFalse(self.sol.isNumber("-01"))
 
   def test_trim_spaces(self):
     self.assertTrue(self.sol.isNumber(" 0 "))
@@ -63,3 +61,5 @@ class TestSolution(TestCase):
 
   def test_failed_cases(self):
     self.assertTrue(self.sol.isNumber('.1'))
+    self.assertTrue(self.sol.isNumber('01'))
+    self.assertTrue(self.sol.isNumber('-01'))
