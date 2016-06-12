@@ -44,3 +44,11 @@ class TestSolution(TestCase):
     self.assertFalse(self.sol.isNumber("-0.00000000"))
     self.assertFalse(self.sol.isNumber("0.00000000x"))
     self.assertFalse(self.sol.isNumber("\t\20.00000000x"))
+
+  def test_power(self):
+    self.assertTrue(self.sol.isNumber("2e5"))
+    self.assertTrue(self.sol.isNumber("2e15"))
+    self.assertTrue(self.sol.isNumber("2e-15"))
+    self.assertTrue(self.sol.isNumber("2e-253213213"))
+
+    self.assertFalse(self.sol.isNumber("2e25feaf3213213"))

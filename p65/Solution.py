@@ -9,11 +9,11 @@ class Solution(object):
 
         s = re.sub('(^[ ]*)|([ ]*$)', '', s)
 
-        nonZeroDigit = '[1-9]\d+'
+        nonZeroDigit = '[1-9]\d*'
 
         if not ( re.match('^-0+([.]0+)?$', s) is None) :
             return False
 
-        result = re.match("^[-]?([0-9]|("+ nonZeroDigit + "))([.]\d+)?$", s)
+        result = re.match("^[-]?([0-9]|("+ nonZeroDigit + "))([.]\d+)?([e][-]?" + nonZeroDigit + ")?$", s)
 
         return not (result is None)
