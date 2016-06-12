@@ -68,3 +68,5 @@ class TestSolution(TestCase):
     self.assertTrue(self.sol.isNumber('3.e-2'))
     self.assertTrue(self.sol.isNumber('32133.e3212'))
     self.assertFalse(self.sol.isNumber('.'))
+
+    self.assertTrue(self.sol.isNumber('+.8'))
