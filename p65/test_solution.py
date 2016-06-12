@@ -60,3 +60,6 @@ class TestSolution(TestCase):
 
     self.assertFalse(self.sol.isNumber("abc"))
     self.assertFalse(self.sol.isNumber("1 a"))
+
+  def test_failed_cases(self):
+    self.assertTrue(self.sol.isNumber('.1'))
