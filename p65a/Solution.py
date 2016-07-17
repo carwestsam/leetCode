@@ -10,5 +10,4 @@ class Solution(object):
             return False
 
 
-
-        return re.match(r"^[-+]?(([0-9])|([1-9][0-9]+))$", s)
+        return re.match(r"^[-+]?(([0-9])|([1-9][0-9]+))([.][0-9]+)?$", s)

@@ -18,5 +18,10 @@ class TestSolution(TestCase):
     self.assertFalse(solution.isNumber("+0321"))
     self.assertFalse(solution.isNumber("-0321"))
 
+  def test_float_without_e(self):
+    sol = Solution()
+
+    self.assertTrue(sol.isNumber("1.0"))
+
 
 
