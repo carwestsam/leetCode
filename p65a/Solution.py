@@ -1,13 +1,6 @@
 import re
 
 class Solution(object):
-
-    def isFloatWithoutEpattern(self):
-
-
-        return
-
-
     def isNumber(self, s):
         """
         :type s: str

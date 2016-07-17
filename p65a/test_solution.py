@@ -38,3 +38,8 @@ class TestSolution(TestCase):
     self.assertTrue(sol.isNumber("34322.432e+10432"))
     self.assertTrue(sol.isNumber("34322.432e-10432"))
 
+  def test_special_case(self):
+    sol = Solution()
+
+    self.assertFalse(sol.isNumber("feafea"))
+
