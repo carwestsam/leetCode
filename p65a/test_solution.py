@@ -29,5 +29,8 @@ class TestSolution(TestCase):
     self.assertTrue(sol.isNumber(".123321"))
     self.assertTrue(sol.isNumber("123321."))
 
+  def test_float_with_e(self):
+    sol = Solution()
 
+    self.assertTrue(sol.isNumber("32e10"))
 

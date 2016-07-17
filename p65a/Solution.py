@@ -1,6 +1,15 @@
 import re
 
 class Solution(object):
+
+    def isFloatWithoutEpattern(self):
+        intNumber = "(([0-9])|([1-9][0-9]+))"
+        dotNumber = "([.][0-9]+)"
+        WS = ""
+
+        return "[+-]?((" + dotNumber + WS + ")|(" + intNumber + '.' + WS + ")|(" + intNumber + dotNumber + "?" + WS + "))"
+
+
     def isNumber(self, s):
         """
         :type s: str
@@ -9,13 +18,7 @@ class Solution(object):
         if s == "":
             return False
 
-        if re.match(r'^[+-]?', s):
-            s = re.sub(r'^[+-]?', '',s)
+        # if re.match(r'^[+-]?', s):
+        #     s = re.sub(r'^[+-]?', '',s)
 
-        intNumber = "(([0-9])|([1-9][0-9]+))"
-        dotNumber = "([.][0-9]+)"
-        WS = "$"
-
-        if re.match(dotNumber + WS, s) or re.match(intNumber + '.' + WS, s) or re.match(r"" + intNumber + dotNumber + "?" + WS, s):
-            return True
-        return False
+        return re.match("^" + self.isFloatWithoutEpattern() + '([e]' + self.isFloatWithoutEpattern() +  ")?$", s)
