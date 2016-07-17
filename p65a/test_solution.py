@@ -11,4 +11,7 @@ class TestSolution(TestCase):
     self.assertEqual(solution.isNumber(""), False)
 
     self.assertTrue(solution.isNumber("0"), True)
+    self.assertTrue(solution.isNumber("12"), True)
+
+
 

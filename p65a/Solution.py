@@ -9,4 +9,4 @@ class Solution(object):
         if s == "":
             return False
 
-        return re.match(r"0", s)
+        return re.match(r"[0-9]+", s)
