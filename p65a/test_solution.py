@@ -22,6 +22,10 @@ class TestSolution(TestCase):
     sol = Solution()
 
     self.assertTrue(sol.isNumber("1.0"))
+    self.assertTrue(sol.isNumber("1.38247932"))
+    self.assertTrue(sol.isNumber("+1.38247932"))
+    self.assertTrue(sol.isNumber("-1.38247932"))
+
 
 
 
