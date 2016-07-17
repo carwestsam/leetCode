@@ -34,3 +34,7 @@ class TestSolution(TestCase):
 
     self.assertTrue(sol.isNumber("32e10"))
 
+    self.assertTrue(sol.isNumber("34322.432e10432"))
+    self.assertTrue(sol.isNumber("34322.432e+10432"))
+    self.assertTrue(sol.isNumber("34322.432e-10432"))
+
