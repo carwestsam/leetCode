@@ -15,5 +15,8 @@ class TestSolution(TestCase):
     self.assertTrue(solution.isNumber("-321"), True)
     self.assertTrue(solution.isNumber("+321"), True)
 
+    self.assertFalse(solution.isNumber("+0321"))
+    self.assertFalse(solution.isNumber("-0321"))
+
 
 
