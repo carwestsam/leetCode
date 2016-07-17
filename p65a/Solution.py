@@ -13,6 +13,7 @@ class Solution(object):
         dotNumber = "([.][0-9]+)"
         sign = "[+-]?"
         floatwithoute = sign + "((" + dotNumber + ")|(" + intNumber + '.' + ")|(" + intNumber + dotNumber + "?" + "))"
+        WS = "[ ]*"
 
-        result = re.match("^" + floatwithoute + '([e]' + sign + intNumber +  ")?$", s)
+        result = re.match("^" + WS + floatwithoute + '([e]' + sign + intNumber +  ")?" + WS + "$", s)
         return not (result is None)
