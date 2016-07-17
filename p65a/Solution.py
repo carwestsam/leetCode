@@ -3,11 +3,9 @@ import re
 class Solution(object):
 
     def isFloatWithoutEpattern(self):
-        intNumber = "(([0-9])|([1-9][0-9]+))"
-        dotNumber = "([.][0-9]+)"
-        WS = ""
 
-        return "[+-]?((" + dotNumber + WS + ")|(" + intNumber + '.' + WS + ")|(" + intNumber + dotNumber + "?" + WS + "))"
+
+        return
 
 
     def isNumber(self, s):
@@ -18,7 +16,10 @@ class Solution(object):
         if s == "":
             return False
 
-        # if re.match(r'^[+-]?', s):
-        #     s = re.sub(r'^[+-]?', '',s)
+        intNumber = "(([0-9])|([1-9][0-9]+))"
+        dotNumber = "([.][0-9]+)"
+        sign = "[+-]?"
+        floatwithoute = sign + "((" + dotNumber + ")|(" + intNumber + '.' + ")|(" + intNumber + dotNumber + "?" + "))"
 
-        return re.match("^" + self.isFloatWithoutEpattern() + '([e]' + self.isFloatWithoutEpattern() +  ")?$", s)
+
+        return re.match("^" + floatwithoute + '([e]' + sign + intNumber +  ")?$", s)
