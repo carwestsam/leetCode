@@ -14,5 +14,5 @@ class Solution(object):
         sign = "[+-]?"
         floatwithoute = sign + "((" + dotNumber + ")|(" + intNumber + '.' + ")|(" + intNumber + dotNumber + "?" + "))"
 
-
-        return re.match("^" + floatwithoute + '([e]' + sign + intNumber +  ")?$", s)
+        result = re.match("^" + floatwithoute + '([e]' + sign + intNumber +  ")?$", s)
+        return not (result is None)
