@@ -15,3 +15,7 @@ class TestSolution(TestCase):
     self.assertEqual(self.sol.multiply((1,1), (1,1)), (0,2))
     self.assertEqual(self.sol.multiply((1, -1),(1, -1)), (0, -2))
     self.assertEqual(self.sol.multiply((3, -1),(1, -2)), (1, -7))
+
+  def test_print_complex(self):
+    self.assertEqual(self.sol.convert((3,2)), "3+2i")
+    self.assertEqual(self.sol.convert((0,-3)), "0+-3i")

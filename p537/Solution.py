@@ -17,3 +17,7 @@ class Solution(object):
         real = num1[0] * num2[0] - num1[1] * num2[1]
         imaginary = num1[0] * num2[1] + num1[1] * num2[0]
         return (real, imaginary)
+
+    def convert(self, num):
+        real, img = num
+        return str(real) + "+" + str(img) + "i"
