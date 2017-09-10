@@ -5,7 +5,12 @@ class Solution(object):
         :type b: str
         :rtype: str
         """
-        pass
+
+        na = self.parseComplex(a)
+        nb = self.parseComplex(b)
+        result = self.multiply(na, nb)
+
+        return self.convert(result)
 
     def parseComplex(self, complexString):
         cutted = complexString.split('+')

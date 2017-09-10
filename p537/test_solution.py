@@ -19,3 +19,7 @@ class TestSolution(TestCase):
   def test_print_complex(self):
     self.assertEqual(self.sol.convert((3,2)), "3+2i")
     self.assertEqual(self.sol.convert((0,-3)), "0+-3i")
+
+  def test_full_function(self):
+    self.assertEqual(self.sol.complexNumberMultiply("1+1i", "1+1i"), "0+2i")
+    self.assertEqual(self.sol.complexNumberMultiply("1+-1i", "1+-1i"), "0+-2i")
