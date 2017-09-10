@@ -12,3 +12,8 @@ class Solution(object):
         a = int(cutted[0])
         b = int(cutted[1].split('i')[0])
         return (a, b)
+
+    def multiply(self, num1, num2):
+        real = num1[0] * num2[0] - num1[1] * num2[1]
+        imaginary = num1[0] * num2[1] + num1[1] * num2[0]
+        return (real, imaginary)

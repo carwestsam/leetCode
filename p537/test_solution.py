@@ -10,3 +10,8 @@ class TestSolution(TestCase):
     self.assertEqual(self.sol.parseComplex("12+3i"), (12,3))
     self.assertEqual(self.sol.parseComplex("12+-3i"), (12,-3))
     self.assertEqual(self.sol.parseComplex("0+1i"), (0,1))
+
+  def test_calc_mulitply_of_complex_number(self):
+    self.assertEqual(self.sol.multiply((1,1), (1,1)), (0,2))
+    self.assertEqual(self.sol.multiply((1, -1),(1, -1)), (0, -2))
+    self.assertEqual(self.sol.multiply((3, -1),(1, -2)), (1, -7))
