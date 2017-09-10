@@ -43,5 +43,5 @@ class TestSolution(TestCase):
 
     self.assertFalse(sol.isNumber("feafea"))
     self.assertTrue(sol.isNumber(" 1"))
-    self.assertFalse(sol.isNumber("0e"))
+
 
