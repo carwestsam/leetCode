@@ -42,5 +42,11 @@ class TestSolution(TestCase):
     self.assertEqual(tree[3]['height'],2)
     self.assertEqual(tree[4]['height'],2)
 
+  def test_get_Max_value_height_nodes(self):
+    N = 6
+    E = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]
+    ans = self.sol.findMinHeightTrees(N, E)
+    self.assertEqual(len(ans), 2)
+
 
 

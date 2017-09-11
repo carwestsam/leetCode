@@ -6,6 +6,13 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: List[int]
         """
+        tree = self.createTree(n, edges)
+        self.calc_minimum_height(tree)
+
+        maxHeight = max( tree[key]["height"] for key in tree )
+        ans = [ key for key in tree if tree[key]["height"] == maxHeight ]
+
+        return ans
 
     def createTree(self, N, E):
         tree = {}
@@ -38,7 +45,6 @@ class Solution(object):
         while len(inhand) > 0:
             uu = inhand.pop(0)
             u = tree[uu]
-            print (uu, u)
 
             for vv in u["edges"]:
                 v = tree[vv]
