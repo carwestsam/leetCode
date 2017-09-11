@@ -18,3 +18,12 @@ class TestSolution(TestCase):
     self.assertEqual(tree[1]["conn"], 1)
     self.assertEqual(tree[2]["conn"], 2)
 
+  def test_get_conn_1_nodes(self):
+    N = 3
+    E = [[1,2],[2,3]]
+    tree = self.sol.createTree(N, E)
+    inHandNodes = self.sol.get_conn_nodes(tree)
+    self.assertEqual(len(inHandNodes), 2)
+    self.assertTrue(1 in [1,3])
+    self.assertTrue(3 in [1,3])
+

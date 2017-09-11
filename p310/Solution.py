@@ -19,3 +19,11 @@ class Solution(object):
             tree[e[1]]["conn"] += 1
 
         return tree
+
+    def get_conn_nodes(self, tree):
+        conn_nodes = []
+        for k in tree:
+            if tree[k]["conn"] == 1:
+                conn_nodes.append(k)
+        return conn_nodes
+
