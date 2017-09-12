@@ -9,6 +9,9 @@ class Solution(object):
         tree = self.createTree(n, edges)
         self.calc_minimum_height(tree)
 
+        if n == 0:
+            return []
+
         maxHeight = max( tree[key]["height"] for key in tree )
         ans = [ key for key in tree if tree[key]["height"] == maxHeight ]
 
@@ -19,7 +22,7 @@ class Solution(object):
         for i in range(N):
             tree[i] = { "edges": [],
                           "conn": 0,
-                          "height": MAX_NUM,
+                          "height": -1,
                           "visit": False}
 
         for e in E:
@@ -45,6 +48,7 @@ class Solution(object):
         while len(inhand) > 0:
             uu = inhand.pop(0)
             u = tree[uu]
+            print (uu, u)
 
             for vv in u["edges"]:
                 v = tree[vv]
