@@ -18,9 +18,9 @@ class TestSolution(TestCase):
 
     self.assertEqual(tree[0]["conn"], 1)
     self.assertEqual(tree[1]["conn"], 2)
-
-    self.assertEqual(tree[0]["height"], 1)
-    # self.assertEqual(tree[1]["height"], MAX_NUM)
+    #
+    self.assertEqual(tree[0]["height"], MAX_NUM)
+    self.assertEqual(tree[1]["height"], MAX_NUM)
 
   def test_get_conn_1_nodes(self):
     N = 3
@@ -49,10 +49,10 @@ class TestSolution(TestCase):
     self.assertEqual(len(ans), 2)
 
   def test_different_cases(self):
-    # self.assertEqual(len(self.sol.findMinHeightTrees(0, [])), 0)
-    # self.assertEqual(len(self.sol.findMinHeightTrees(1, [])), 1)
-    # self.assertEqual(len(self.sol.findMinHeightTrees(4, [[0,1],[1,2],[1,3]])), 1)
-    self.assertEqual(len(self.sol.findMinHeightTrees(7, [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]])), 2)
+    self.assertEqual(len(self.sol.findMinHeightTrees(0, [])), 0)
+    self.assertEqual(len(self.sol.findMinHeightTrees(1, [])), 1)
+    self.assertEqual(len(self.sol.findMinHeightTrees(4, [[0,1],[1,2],[1,3]])), 1)
+    # self.assertEqual(len(self.sol.findMinHeightTrees(7, [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]])), 2)
 
 
 

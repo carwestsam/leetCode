@@ -22,7 +22,7 @@ class Solution(object):
         for i in range(N):
             tree[i] = { "edges": [],
                           "conn": 0,
-                          "height": -1,
+                          "height": MAX_NUM,
                           "visit": False}
 
         for e in E:
@@ -48,7 +48,6 @@ class Solution(object):
         while len(inhand) > 0:
             uu = inhand.pop(0)
             u = tree[uu]
-            print (uu, u)
 
             for vv in u["edges"]:
                 v = tree[vv]
