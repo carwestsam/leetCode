@@ -16,10 +16,22 @@ class TestSolution(TestCase):
 
   def test_translate_number_to_string(self):
     self.sol.pre_trans(2)
-    self.assertEqual(self.sol.trans(1), ".Q")
-    self.assertEqual(self.sol.trans(2), "Q.")
+    self.assertEqual(self.sol.trans(1), "Q.")
+    self.assertEqual(self.sol.trans(2), ".Q")
 
     self.sol.pre_trans(3)
-    self.assertEqual(self.sol.trans(1), "..Q")
-    self.assertEqual(self.sol.trans(4), "Q..")
+    self.assertEqual(self.sol.trans(1), "Q..")
+    self.assertEqual(self.sol.trans(4), "..Q")
 
+  def test_solve_n_queen_problem(self):
+    self.assertEqual(self.sol.solveNQueens(4),
+      [
+       [".Q..",
+        "...Q",
+        "Q...",
+        "..Q."],
+       ["..Q.",
+        "Q...",
+        "...Q",
+        ".Q.."]
+      ])
