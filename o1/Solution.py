@@ -23,7 +23,7 @@ def compare(a, b):
 def raw(nums):
     first = 0
     second = 0
-    print('raw', nums)
+    # print('raw', nums)
 
     if compare(second, first):
         first, second = second, first
@@ -35,7 +35,7 @@ def raw(nums):
         elif first >= num and num > second:
             second = num
 
-    print(first, second)
+    # print(first, second)
     return first, second
 
 
@@ -102,6 +102,6 @@ def divide(nums, l, r):
 def sol2(nums):
     n = len(nums)
     first, second = divide(nums, 0, n - 1)
-    print(first, second)
+    # print(first, second)
 
     return first, second
