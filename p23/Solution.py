@@ -64,9 +64,4 @@ class Solution:
 
         ans[len(ans) -1].next = None
 
-        # p = ans[0]
-        # while p != None:
-        #     print(p.val)
-        #     p = p.next
-
         return ans[0]
