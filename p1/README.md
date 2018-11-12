@@ -16,3 +16,9 @@ return [0, 1].
 ```
 
 
+## Solution walk through
+
+1. make it runnable
+2. double loop to find answer
+3. loop first element, and use divide to find j in sorted array
+4. given random array list, sort and preserve index
