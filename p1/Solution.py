@@ -5,8 +5,21 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        for i in range(len(nums)-1):
-            for j in range(i+1,len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+
+        N = len(nums)
+
+        for i in range(N - 1):
+            l = i+1
+            r = N-1
+            m = (l + r)/2
+
+            while l <= r:
+                if nums[i] + nums[m] == target:
+                    return [i, m]
+                if nums[i] + nums[m] > target:
+                    r = m - 1
+                elif nums[i] + nums[m] < target:
+                    l = m + 1
+                m = (l+r)/2
+
         return None
