@@ -19,3 +19,7 @@ class TestSolution(TestCase):
         sol = Solution()
         self.assertEqual([0, 3], sol.twoSum([5, 3, 2, 1], 6))
         self.assertEqual([1, 7], sol.twoSum([32, 23, 512, 522, 123, 412, 512, 64, 1, 67, 124], 87))
+
+    def test_if_have_same_number(self):
+        sol = Solution()
+        self.assertEqual([2, 3], sol.twoSum([12, 12, 64, 64, 33, 33], 128))
