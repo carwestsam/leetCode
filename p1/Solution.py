@@ -18,7 +18,7 @@ class Solution(object):
         for i in range(N - 1):
             l = i + 1
             r = N - 1
-            m = (l + r) / 2
+            m = (l + r) // 2
 
             while l <= r:
                 if advanced_list[i][0] + advanced_list[m][0] == target:
@@ -29,6 +29,6 @@ class Solution(object):
                     r = m - 1
                 elif advanced_list[i][0] + advanced_list[m][0] < target:
                     l = m + 1
-                m = (l + r) / 2
+                m = (l + r) // 2
 
         return None
