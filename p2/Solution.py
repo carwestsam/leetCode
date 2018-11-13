@@ -17,8 +17,9 @@ class Solution:
         p2 = l2
         ans = None
         last = None
+        forward = 0
 
-        while p1 is not None and p2 is not None:
+        while (p1 is not None and p2 is not None) or (forward != 0):
 
             if p1 is not None:
                 v1 = p1.val
@@ -31,11 +32,14 @@ class Solution:
             else:
                 v2 = 0
 
+            v = (v1 + v2 + forward) % 10
+            forward = (v1 + v2 + forward) // 10
+
             if ans is None:
-                ans = ListNode(v1 + v2)
+                ans = ListNode(v)
                 last = ans
             else:
-                node = ListNode(v1 + v2)
+                node = ListNode(v)
                 last.next = node
                 last = node
 

@@ -39,3 +39,10 @@ class TestSolution(TestCase):
         self.assertEqual(5, sol.addTwoNumbers(l11, l21).val)
         self.assertEqual(7, sol.addTwoNumbers(l11, l21).next.val)
 
+    def test_add_with_push_forward(self):
+        sol = Solution()
+        l1 = self.numToList(47)
+        l2 = self.numToList(98)
+
+        self.assertEqual(4, sol.addTwoNumbers(l1, l2).next.val)
+        self.assertEqual(1, sol.addTwoNumbers(l1, l2).next.next.val)
