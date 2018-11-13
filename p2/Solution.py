@@ -12,4 +12,5 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        return ListNode(0)
+
+        return ListNode(l1.val + l2.val)
