@@ -5,6 +5,7 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def addTwoNumbers(self, l1, l2):
         """
@@ -30,7 +31,7 @@ class Solution:
             else:
                 v2 = 0
 
-            if ans == None:
+            if ans is None:
                 ans = ListNode(v1 + v2)
                 last = ans
             else:
