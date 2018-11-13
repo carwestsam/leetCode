@@ -46,3 +46,11 @@ class TestSolution(TestCase):
 
         self.assertEqual(4, sol.addTwoNumbers(l1, l2).next.val)
         self.assertEqual(1, sol.addTwoNumbers(l1, l2).next.next.val)
+
+    def test_example(self):
+        sol = Solution()
+        l1 = self.numToList(342)
+        l2 = self.numToList(465)
+
+        self.assertEqual(0, sol.addTwoNumbers(l1, l2).next.val)
+        self.assertEqual(8, sol.addTwoNumbers(l1, l2).next.next.val)
