@@ -19,7 +19,7 @@ class Solution:
         last = None
         forward = 0
 
-        while (p1 is not None and p2 is not None) or (forward != 0):
+        while (p1 is not None) or (p2 is not None) or (forward != 0):
 
             if p1 is not None:
                 v1 = p1.val

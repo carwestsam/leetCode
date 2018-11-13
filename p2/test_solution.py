@@ -17,6 +17,10 @@ class TestSolution(TestCase):
         self.assertEqual(6, sol.addTwoNumbers(l1, l2).val)
 
     def numToList(self, number):
+
+        if number == 0:
+            return ListNode(0)
+
         last = None
         result = None
         while number != 0:
@@ -54,3 +58,10 @@ class TestSolution(TestCase):
 
         self.assertEqual(0, sol.addTwoNumbers(l1, l2).next.val)
         self.assertEqual(8, sol.addTwoNumbers(l1, l2).next.next.val)
+
+    def test_add_with_zero(self):
+        sol = Solution()
+        l1 = self.numToList(81)
+        l2 = self.numToList(0)
+        self.assertEqual(1, sol.addTwoNumbers(l1, l2).val)
+        self.assertEqual(8, sol.addTwoNumbers(l1, l2).next.val)
