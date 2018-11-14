@@ -20,7 +20,6 @@ class Solution:
 
             result = i - currentStart + 1
 
-            # result = self.lengthOfLongestSubstringIndex(s, i)
             if result > ans:
                 ans = result
 
