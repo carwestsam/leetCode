@@ -5,9 +5,22 @@ class Solution:
         :rtype: int
         """
         ans = 0
+        currentDict = {}
+        currentStart = 0
 
         for i in range(len(s)):
-            result = self.lengthOfLongestSubstringIndex(s, i)
+
+            if s[i] in currentDict:
+                newStart = currentDict[s[i]]+1
+                for j in range(currentStart, newStart):
+                    del currentDict[ s[j] ]
+                currentStart = newStart
+
+            currentDict[s[i]] = i
+
+            result = i - currentStart + 1
+
+            # result = self.lengthOfLongestSubstringIndex(s, i)
             if result > ans:
                 ans = result
 

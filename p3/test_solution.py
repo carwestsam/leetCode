@@ -14,9 +14,10 @@ class TestSolution(TestCase):
         self.assertEqual(1, sol.lengthOfLongestSubstringIndex("bbbbb", 2))
         self.assertEqual(3, sol.lengthOfLongestSubstringIndex("pwwkew", 2))
 
-    def test_should_get_longest_substring_by_looping(self):
+    def test_should_get_longest_substring(self):
         sol = Solution()
 
         self.assertEqual(3, sol.lengthOfLongestSubstring("abcabcbb"))
         self.assertEqual(1, sol.lengthOfLongestSubstring("bbbbb"))
         self.assertEqual(3, sol.lengthOfLongestSubstring("pwwkew"))
+        self.assertEqual(26, sol.lengthOfLongestSubstring("1lzabcdefghijklmnopqrstuvwxyzac3"))
