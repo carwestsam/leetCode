@@ -25,3 +25,22 @@ class Solution:
 
         print(longestIdx, longest)
         return origin[longestIdx:longestIdx+longest]
+
+    def kmpInit(self, pattern):
+        lp = len(pattern)
+        init = [-1] * lp
+        i = -1
+        j = 1
+
+        while j < lp:
+            while i != -1 and pattern[j] != pattern[i + 1]:
+                i = init[i]
+            if pattern[j] == pattern[i + 1]:
+                init[j] = i + 1
+                i += 1
+            else:
+                init[j] = -1
+
+            j += 1
+
+        return init
