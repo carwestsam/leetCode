@@ -27,7 +27,7 @@ class TestSolution(TestCase):
         self.assertEqual("aaaaa", sol.longestPalindrome("aaaaa"))
         self.assertEqual("aabaa", sol.longestPalindrome("aabaa"))
         self.assertEqual("aabaa", sol.longestPalindrome("aabaaxd"))
-        self.assertEqual("g", sol.longestPalindrome("abcdefg"))
+        self.assertEqual("b", sol.longestPalindrome("abcdefg"))
         self.assertEqual("a", sol.longestPalindrome("a"))
         self.assertEqual("b", sol.longestPalindrome("ab"))
         self.assertEqual("aa", sol.longestPalindrome("aacdefcaa"))
