@@ -5,5 +5,8 @@ class Solution:
         :type numRows: int
         :rtype: str
         """
+        if numRows == 1:
+            return s
+        elif numRows == 2:
+            return s[::2] + s[1::2]
         return s
-
