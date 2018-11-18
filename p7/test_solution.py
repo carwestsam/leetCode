@@ -12,3 +12,9 @@ class TestSolution(TestCase):
         self.assertEqual(321, sol.reverse(123))
         self.assertEqual(321, sol.reverse(12300))
         self.assertEqual(-321, sol.reverse(-123))
+
+    def test_reverse_should_return_zero_if_exceed(self):
+        sol = Solution()
+
+        self.assertEqual(0, sol.reverse(2147483649))
+        self.assertEqual(0, sol.reverse(-2147483649))

@@ -21,4 +21,7 @@ class Solution:
         if negative is True:
             ans = - ans
 
+        if ans > 2 ** 31 - 1 or ans < - 2 ** 31:
+            ans = 0
+
         return ans
