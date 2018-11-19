@@ -37,4 +37,14 @@ class Solution:
                 ans = ans * 10 + atoi_dict[str[i]]
             i += 1
 
-        return ans * symbol
+        INT_MAX = 2147483647
+        INT_MIN = -2147483648
+
+        ans = ans * symbol
+
+        if ans > INT_MAX:
+            ans = INT_MAX
+        if ans < INT_MIN:
+            ans = INT_MIN
+
+        return ans

@@ -15,7 +15,7 @@ class TestSolution(TestCase):
         self.assertEqual(1, sol.myAtoi("1"))
         self.assertEqual(12, sol.myAtoi("12"))
         self.assertEqual(2147483647, sol.myAtoi("2147483647"))
-        self.assertEqual(2147483647, sol.myAtoi("2147483647"))
+        self.assertEqual(-2147483648, sol.myAtoi("-2147483648"))
 
     def test_negative_number_without_white_space(self):
         sol = Solution()
@@ -30,3 +30,8 @@ class TestSolution(TestCase):
         self.assertEqual(-42, sol.myAtoi("   -42"))
         self.assertEqual(4193, sol.myAtoi("4193 with words"))
 
+    def test_when_number_exceed_return_INT_MAX_or_INT_MIN(self):
+        sol = Solution()
+
+        self.assertEqual(-2147483648, sol.myAtoi("-91283472332"))
+        self.assertEqual(2147483647, sol.myAtoi("91283472332"))
