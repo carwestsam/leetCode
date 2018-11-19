@@ -17,3 +17,9 @@ class TestSolution(TestCase):
         self.assertEqual(2147483647, sol.myAtoi("2147483647"))
         self.assertEqual(2147483647, sol.myAtoi("2147483647"))
 
+    def test_negative_number_without_white_space(self):
+        sol = Solution()
+
+        self.assertEqual(-2, sol.myAtoi("-2"))
+        self.assertEqual(-22, sol.myAtoi("-22"))
+        self.assertEqual(-232, sol.myAtoi("-232"))
