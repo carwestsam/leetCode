@@ -23,3 +23,10 @@ class TestSolution(TestCase):
         self.assertEqual(-2, sol.myAtoi("-2"))
         self.assertEqual(-22, sol.myAtoi("-22"))
         self.assertEqual(-232, sol.myAtoi("-232"))
+
+    def test_ignore_whitespace_and_chars(self):
+        sol = Solution()
+
+        self.assertEqual(-42, sol.myAtoi("   -42"))
+        self.assertEqual(4193, sol.myAtoi("4193 with words"))
+
