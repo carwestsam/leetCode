@@ -5,4 +5,4 @@ class Solution:
         :type p: str
         :rtype: bool
         """
-        return True
+        return s == p
