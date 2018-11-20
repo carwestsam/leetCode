@@ -8,4 +8,9 @@ class TestSolution(TestCase):
         sol = Solution()
 
         self.assertEqual(True, sol.isPalindrome(1))
+        self.assertEqual(True, sol.isPalindrome(121))
+        self.assertEqual(True, sol.isPalindrome(0))
 
+        self.assertEqual(False, sol.isPalindrome(12))
+        self.assertEqual(False, sol.isPalindrome(-121))
+        self.assertEqual(False, sol.isPalindrome(10))
