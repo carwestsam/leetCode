@@ -17,3 +17,16 @@ class TestSolution(TestCase):
 
         self.assertEqual(False, sol.isMatch("abc", "bc"))
         self.assertEqual(False, sol.isMatch("aa", "a"))
+
+    def test_isMatch_if_have_dot(self):
+        sol = Solution()
+
+        self.assertEqual(True, sol.isMatch("abc", "ab."))
+        self.assertEqual(True, sol.isMatch("abc", "a.c"))
+        self.assertEqual(True, sol.isMatch("xx", ".."))
+        self.assertEqual(True, sol.isMatch("xxxxb", "....b"))
+        self.assertEqual(True, sol.isMatch("x", "."))
+
+        self.assertEqual(False, sol.isMatch("dd", "."))
+        self.assertEqual(False, sol.isMatch("", "."))
+        self.assertEqual(False, sol.isMatch("abc", "a.d"))
