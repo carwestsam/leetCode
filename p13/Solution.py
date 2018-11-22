@@ -16,7 +16,7 @@ class Solution:
             ans += 500
             i += 1
 
-        if s[i] == 'C':
+        while s[i] == 'C':
             ans += 100
             i += 1
 
@@ -24,7 +24,7 @@ class Solution:
             ans += 50
             i += 1
 
-        if s[i] == 'X':
+        while s[i] == 'X':
             ans += 10
             i += 1
 
@@ -32,7 +32,7 @@ class Solution:
             ans += 5
             i += 1
 
-        if s[i] == 'I':
+        while s[i] == 'I':
             ans += 1
             i += 1
 

@@ -18,3 +18,13 @@ class TestSolution(TestCase):
         self.assertEqual(100, sol.romanToInt("C"))
         self.assertEqual(500, sol.romanToInt("D"))
         self.assertEqual(1000, sol.romanToInt("M"))
+
+    def test_suffix_chain(self):
+        sol = Solution()
+
+        self.assertEqual(3, sol.romanToInt("III"))
+        self.assertEqual(8, sol.romanToInt("VIII"))
+        self.assertEqual(22, sol.romanToInt("XXII"))
+        self.assertEqual(202, sol.romanToInt("CCII"))
+        self.assertEqual(3002, sol.romanToInt("MMMII"))
+        self.assertEqual(3383, sol.romanToInt("MMMCCCLXXXIII"))
