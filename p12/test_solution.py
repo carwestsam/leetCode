@@ -41,3 +41,13 @@ class TestSolution(TestCase):
         self.assertEqual("CMII", sol.intToRoman(902))
 
         self.assertEqual("MCMXCIV", sol.intToRoman(1994))
+
+    def test_should_handle_wrong_answer(self):
+        sol = Solution()
+
+        self.assertEqual("XX", sol.intToRoman(20))
+        self.assertEqual("XXX", sol.intToRoman(30))
+        self.assertEqual("XXXVIII", sol.intToRoman(38))
+        self.assertEqual("XXXIX", sol.intToRoman(39))
+        self.assertEqual("CC", sol.intToRoman(200))
+        self.assertEqual("MMII", sol.intToRoman(2002))

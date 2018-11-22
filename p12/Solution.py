@@ -8,30 +8,55 @@ class Solution:
         ans = ""
 
         if num >= 1000:
-            return "M" + self.intToRoman(num - 1000)
-        elif num >= 900:
-            return "CM" + self.intToRoman(num - 900)
-        elif num >= 500:
-            return "D" + self.intToRoman(num - 500)
-        elif num >= 400:
-            return "CD" + self.intToRoman(num - 400)
-        elif num >= 100:
-            return "C" + self.intToRoman(num - 100)
-        elif num >= 90:
-            return "XC" + self.intToRoman(num - 90)
-        elif num >= 50:
-            return "L" + self.intToRoman(num - 50)
-        elif num >= 40:
-            return "XL" + self.intToRoman(num - 40)
-        elif num >= 10:
-            return "X" + self.intToRoman(num - 10)
-        elif num == 9:
-            return "IX"
-        elif num >= 5:
-            return "V" + self.intToRoman(num - 5)
-        elif num == 4:
-            return "IV"
-        elif 0 <= num < 4:
-            return "I" * num
+            x = num // 1000
+            ans += "M" * x
+            num -= 1000 * x
 
-        return "I"
+        if num >= 900:
+            ans += "CM"
+            num -= 900
+
+        if num >= 500:
+            ans += "D"
+            num -= 500
+
+        if num >= 400:
+            ans += "CD"
+            num -= 400
+
+        if num >= 100:
+            x = num // 100
+            ans += "C" * x
+            num -= 100 * x
+
+        if num >= 90:
+            ans += "XC"
+            num -= 90
+
+        if num >= 50:
+            ans += "L"
+            num -= 50
+
+        if num >= 40:
+            ans += "XL"
+            num -= 40
+
+        if num >= 10:
+            x = num // 10
+            ans += "X" * x
+            num -= 10 * x
+
+        if num == 9:
+            ans += "IX"
+
+        elif num >= 5:
+            ans += "V"
+            ans += "I" * (num - 5)
+
+        elif num == 4:
+            ans += "IV"
+
+        elif 0 <= num < 4:
+            ans += "I" * num
+
+        return ans
