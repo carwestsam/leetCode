@@ -28,3 +28,14 @@ class TestSolution(TestCase):
         self.assertEqual(202, sol.romanToInt("CCII"))
         self.assertEqual(3002, sol.romanToInt("MMMII"))
         self.assertEqual(3383, sol.romanToInt("MMMCCCLXXXIII"))
+
+    def test_prefix_chain(self):
+        sol = Solution()
+
+        self.assertEqual(4, sol.romanToInt("IV"))
+        self.assertEqual(9, sol.romanToInt("IX"))
+        self.assertEqual(40, sol.romanToInt("XL"))
+        self.assertEqual(90, sol.romanToInt("XC"))
+        self.assertEqual(400, sol.romanToInt("CD"))
+        self.assertEqual(900, sol.romanToInt("CM"))
+
