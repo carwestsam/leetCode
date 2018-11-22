@@ -29,3 +29,15 @@ class TestSolution(TestCase):
         self.assertEqual("XVIII", sol.intToRoman(18))
         self.assertEqual("MDCLXVI", sol.intToRoman(1666))
         self.assertEqual("MXVIII", sol.intToRoman(1018))
+
+    def test_should_handle_prefix_chain(self):
+        sol = Solution()
+
+        self.assertEqual("IV", sol.intToRoman(4))
+        self.assertEqual("IX", sol.intToRoman(9))
+        self.assertEqual("XLI", sol.intToRoman(41))
+        self.assertEqual("XCII", sol.intToRoman(92))
+        self.assertEqual("CDIII", sol.intToRoman(403))
+        self.assertEqual("CMII", sol.intToRoman(902))
+
+        self.assertEqual("MCMXCIV", sol.intToRoman(1994))
