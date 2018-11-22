@@ -8,6 +8,10 @@ class TestSolution(TestCase):
         sol = Solution()
 
         self.assertEqual(1, sol.romanToInt("I"))
+        self.assertEqual(3, sol.romanToInt('III'))
+        self.assertEqual(58, sol.romanToInt('LVIII'))
+        self.assertEqual(1994, sol.romanToInt('MCMXCIV'))
+        self.assertEqual(2994, sol.romanToInt('MMCMXCIV'))
 
     def test_single_char(self):
         sol = Solution()
