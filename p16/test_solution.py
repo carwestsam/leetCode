@@ -12,4 +12,4 @@ class TestSolution(TestCase):
         self.assertEqual(2, sol.threeSumClosest([-1, 2, 1, -4], 3))
         self.assertEqual(2, sol.threeSumClosest([-1, 2, 1, -4], 3))
         self.assertEqual(2, sol.threeSumClosest([-1, 2, 1, -4], 1))
-        # self.assertEqual(0, sol.threeSumClosest([0, 2, 1, -3], 1))
+        self.assertEqual(0, sol.threeSumClosest([0, 2, 1, -3], 1))

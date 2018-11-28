@@ -10,27 +10,25 @@ class Solution:
 
         # print(nums)
 
-        left = 0
-        right = len(nums) - 1
-
-        if target <= nums[left]:
-            return sum([nums[0], nums[1], nums[2]])
-        elif target >= nums[right]:
-            return sum([nums[-3], nums[-2], nums[-1]])
-
-        def abs(v):
-            if v < 0:
-                return -v
+        def abs (x):
+            if x > 0:
+                return x
             else:
-                return v
+                return -x
 
-        while left + 2 < right:
-            dl = abs(nums[left] - target)
-            dr = abs(nums[right] - target)
+        ln = len(nums)
+        best = sum(nums[0:3])
+        closest = abs(best - target)
 
-            if dl >= dr:
-                left = left + 1
-            elif dr > dl:
-                right = right - 1
+        for i in range(ln-2):
+            for j in range(i+1, ln-1):
+                for k in range(j+1, ln):
+                    s = nums[i] + nums[j] + nums[k]
+                    if abs(s - target) < closest:
+                        best = s
+                        closest = abs(s - target)
+                        # print(closest, best, nums[i], nums[j], nums[k])
 
-        return sum(nums[left: right + 1])
+
+        return best
+
