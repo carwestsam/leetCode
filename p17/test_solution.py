@@ -7,6 +7,8 @@ class TestSolution(TestCase):
     def test_letterCombinations(self):
         sol = Solution()
 
+        self.assertEqual([], sol.letterCombinations(""))
+
         self.assertEqual(["a", "b", "c"], sol.letterCombinations("2"))
         self.assertEqual(["d", "e", "f"], sol.letterCombinations("3"))
         self.assertEqual(["g", "h", "i"], sol.letterCombinations("4"))

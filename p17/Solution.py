@@ -4,6 +4,9 @@ class Solution:
         :type digits: str
         :rtype: List[str]
         """
+        if len(digits) == 0:
+            return []
+
         num2char = {
             '2': "abc",
             '3': "def",
