@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from p19.Solution import Solution, ListNode
 
+
 def nodesToList(head):
     l = []
     pt = head
@@ -10,6 +11,7 @@ def nodesToList(head):
         pt = pt.next
     return l
 
+
 def listToNodes(valList):
     head = ListNode(0)
     pt = head
@@ -17,8 +19,9 @@ def listToNodes(valList):
         n = ListNode(v)
         pt.next = n
         pt = n
-    
+
     return head.next
+
 
 class TestSolution(TestCase):
     def test_removeNthFromEnd(self):
@@ -31,6 +34,8 @@ class TestSolution(TestCase):
         # self.assertEqual([2], nodesToList(sol.removeNthFromEnd(listToNodes([1,2]), 2)))
 
     def test_shouldReturnListLength(self):
-        sol =Solution()
+        sol = Solution()
 
         self.assertEqual(0, sol.getLength(listToNodes([])))
+        self.assertEqual(4, sol.getLength(listToNodes([1, 2, 3, 4])))
+        self.assertEqual(1, sol.getLength(listToNodes([2])))

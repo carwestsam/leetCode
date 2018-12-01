@@ -14,5 +14,13 @@ class Solution:
         return
 
     def getLength(self, head):
-        if head == None:
+        if head is None:
             return 0
+
+        pt = head
+        length = 0
+        while pt is not None:
+            length += 1
+            pt = pt.next
+
+        return length
