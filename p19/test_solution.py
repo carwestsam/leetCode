@@ -29,9 +29,12 @@ class TestSolution(TestCase):
 
         self.assertEqual([1], nodesToList(ListNode(1)))
         self.assertEqual(1, listToNodes([1]).val)
+        self.assertEqual(2, listToNodes([1, 2]).next.val)
 
         self.assertEqual([], nodesToList(sol.removeNthFromEnd(listToNodes([1]), 1)))
-        # self.assertEqual([2], nodesToList(sol.removeNthFromEnd(listToNodes([1,2]), 2)))
+        self.assertEqual([2], nodesToList(sol.removeNthFromEnd(listToNodes([1, 2]), 2)))
+        self.assertEqual([1, 3], nodesToList(sol.removeNthFromEnd(listToNodes([1, 2, 3]), 2)))
+        self.assertEqual([1, 2], nodesToList(sol.removeNthFromEnd(listToNodes([1, 2, 3]), 1)))
 
     def test_shouldReturnListLength(self):
         sol = Solution()

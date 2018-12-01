@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def removeNthFromEnd(self, head, n):
         """
@@ -11,7 +12,21 @@ class Solution:
         :type n: int
         :rtype: ListNode
         """
-        return
+        ln = self.getLength(head)
+        target = ln - n
+
+        if target == 0:
+            return head.next
+
+        pt = head
+        cnt = 1
+        while pt != None:
+            if cnt == target:
+                pt.next = pt.next.next
+                break
+            cnt += 1
+            pt = pt.next
+        return head
 
     def getLength(self, head):
         if head is None:
@@ -19,7 +34,7 @@ class Solution:
 
         pt = head
         length = 0
-        while pt is not None:
+        while pt != None:
             length += 1
             pt = pt.next
 
