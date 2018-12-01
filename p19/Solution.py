@@ -11,5 +11,8 @@ class Solution:
         :type n: int
         :rtype: ListNode
         """
+        return
 
-        return None
+    def getLength(self, head):
+        if head == None:
+            return 0
