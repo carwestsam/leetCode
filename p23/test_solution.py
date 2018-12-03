@@ -2,7 +2,6 @@ from unittest import TestCase
 from p23.Solution import Solution, ListNode
 from random import randint, shuffle
 
-
 class TestSolution(TestCase):
     def test_should_init_and_pop_a_minimum_heap(self):
         sol = Solution()
