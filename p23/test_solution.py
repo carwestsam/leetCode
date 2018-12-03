@@ -1,6 +1,8 @@
 from unittest import TestCase
-from p23.Solution import Solution, ListNode
+from p23.Solution import Solution
 from random import randint, shuffle
+from utils import *
+
 
 class TestSolution(TestCase):
     def test_should_init_and_pop_a_minimum_heap(self):
@@ -81,7 +83,20 @@ class TestSolution(TestCase):
 
         self.assertEqual(ans, n11)
 
+        self.assertEqual([1, 1, 2, 3, 4, 4, 5, 6], nodes_to_list(sol.mergeKLists(
+            [list_to_nodes([1, 4, 5]),
+             list_to_nodes([1, 3, 4]),
+             list_to_nodes([2, 6])]
+        )))
+
     def test_special(self):
         sol = Solution()
         ans = sol.mergeKLists([None])
         self.assertEqual(ans, None)
+        self.assertEqual(None, sol.mergeKLists([None, None]))
+        self.assertEqual([1, 2, 3, 4],
+                         nodes_to_list(sol.mergeKLists([None,
+                                                        None,
+                                                        list_to_nodes([1, 3]),
+                                                        list_to_nodes([2, 4]),
+                                                        None])))

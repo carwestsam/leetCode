@@ -1,23 +1,20 @@
 # Definition for singly-linked list.
 
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-
 class Solution:
     def mergeKLists(self, lists):
         """
         :type lists: List[ListNode]
         :rtype: ListNode
         """
+
         if len(lists) == 0:
             return None
         elif len(lists) == 1:
             return lists[0]
 
         def value(node):
+            if node is None:
+                return 0
             return node.val
 
         self.heapInit(lists, value)
@@ -26,8 +23,11 @@ class Solution:
         while len(lists) > 0:
             current = self.heapPop(lists, value)
 
+            if current is None:
+                continue
             if pt is not None:
                 pt.next = current
+                pt = current
             else:
                 head = current
                 pt = current
