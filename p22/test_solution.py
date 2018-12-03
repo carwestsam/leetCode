@@ -8,3 +8,6 @@ class TestSolution(TestCase):
         sol = Solution()
 
         self.assertEqual([], sol.generateParenthesis(0))
+        self.assertEqual(["()"], sol.generateParenthesis(1))
+        self.assertEqual(["(())", "()()"], sol.generateParenthesis(2))
+        self.assertEqual(["((()))", "(()())", "(())()", "()(())", "()()()"], sol.generateParenthesis(3))
