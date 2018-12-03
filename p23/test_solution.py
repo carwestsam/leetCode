@@ -1,6 +1,6 @@
 from unittest import TestCase
 from p23.Solution import Solution, ListNode
-from random import randint
+from random import randint, shuffle
 
 
 class TestSolution(TestCase):
@@ -15,7 +15,44 @@ class TestSolution(TestCase):
             actual.append(sol.heapPop(origin))
         self.assertEqual(expected, actual)
 
-    def xtest_should_return_origin_list(self):
+    def test_should_heap_down(self):
+        sol = Solution()
+
+        origin = [randint(0, 1000) for _ in range(20)]
+        shuffle(origin)
+
+        _input = origin[:10]
+        sol.heapInit(_input)
+        for i in range(10, 20):
+            sol.heapInsert(_input, origin[i])
+        expected = sorted(origin)
+        actual = []
+        for i in range(20):
+            actual.append(sol.heapPop(_input))
+        self.assertEqual(expected, actual)
+
+    def test_should_sort_with_func(self):
+        sol = Solution()
+
+        def mirror(x):
+            return - x
+
+        origin = [randint(0, 1000) for _ in range(20)]
+        shuffle(origin)
+
+        _input = origin[:10]
+        sol.heapInit(_input, mirror)
+        for i in range(10, 20):
+            sol.heapInsert(_input, origin[i], mirror)
+
+        expected = sorted(origin)
+        expected.reverse()
+        actual = []
+        for i in range(20):
+            actual.append(sol.heapPop(_input, mirror))
+        self.assertEqual(expected, actual)
+
+    def test_should_return_origin_list(self):
         sol = Solution()
         n1 = ListNode(1)
         n2 = ListNode(2)
