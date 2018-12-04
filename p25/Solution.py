@@ -11,4 +11,6 @@ class Solution:
         :type k: int
         :rtype: ListNode
         """
+        if k == 1:
+            return head
         return None
