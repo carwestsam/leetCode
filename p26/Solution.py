@@ -7,12 +7,13 @@ class Solution(object):
         ln = len(nums)
 
         if ln < 2:
-            return ln
+            return nums
 
         ans = 1
         last = nums[0]
         for i in range(ln):
             if nums[i] != last:
+                nums[ans] = nums[i]
                 ans += 1
                 last = nums[i]
-        return ans
+        return nums[0:ans]
