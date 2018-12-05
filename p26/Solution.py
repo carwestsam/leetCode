@@ -9,4 +9,10 @@ class Solution(object):
         if ln < 2:
             return ln
 
-        return 1
+        ans = 1
+        last = nums[0]
+        for i in range(ln):
+            if nums[i] != last:
+                ans += 1
+                last = nums[i]
+        return ans

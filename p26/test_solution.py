@@ -9,3 +9,9 @@ class TestSolution(TestCase):
 
         self.assertEqual(1, sol.removeDuplicates([1]))
         self.assertEqual(0, sol.removeDuplicates([]))
+
+    def test_remove_Duplicates(self):
+        sol = Solution()
+
+        self.assertEqual(2, sol.removeDuplicates([1, 1, 2]))
+        self.assertEqual(5, sol.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
