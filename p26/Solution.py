@@ -7,7 +7,7 @@ class Solution(object):
         ln = len(nums)
 
         if ln < 2:
-            return nums
+            return ln
 
         ans = 1
         last = nums[0]
@@ -16,4 +16,4 @@ class Solution(object):
                 nums[ans] = nums[i]
                 ans += 1
                 last = nums[i]
-        return nums[0:ans]
+        return ans
