@@ -36,10 +36,14 @@ class Solution:
             multi_val >>= 1
             multi >>= 1
 
-        if rev_dividend is True and rev_divisor is False and remains != 0:
-            ans += 1
+        # this should be the correct answer
+        # if rev_dividend is True and rev_divisor is False and remains != 0:
+        #     ans += 1
 
         if rev_divisor != rev_dividend:
-            return - ans
+            ans = - ans
+
+        if ans < - (2 << 30) or ans > (2 << 30) - 1:
+            ans = (2 << 30) - 1
 
         return ans
