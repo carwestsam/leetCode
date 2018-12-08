@@ -5,4 +5,16 @@ class Solution:
         :type divisor: int
         :rtype: int
         """
-        return 0
+
+        remains = dividend
+        multi = divisor
+        while multi <= dividend:
+            multi <<= 1
+        multi >>= 1
+
+        while remains >= divisor:
+            if remains >= multi:
+                remains -= multi
+            multi >>= 1
+
+        return remains
