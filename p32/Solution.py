@@ -5,53 +5,36 @@ class Solution:
         :rtype: int
         """
 
-        pairs = []
-        n_pairs = []
         ans = 0
 
-        i = 0
         ls = len(s)
 
-        while i < ls:
+        f = [0] * (ls + 2)
+
+        for i in range(ls):
             if s[i] == '(':
-                if i < ls - 1 and s[i + 1] == ')':
-                    ans = 2
-                    pairs.append((i, i + 1))
-                    i += 1
-            i += 1
+                f[i] = 0
+            else:
+                if i > 0 and s[i - 1] == '(':
+                    pre = 0
+                    if i > 1:
+                        pre = f[i - 2]
+                    f[i] = pre + 2
+                elif i > 0 and s[i - 1] == ')':
+                    if f[i - 1] == 0:
+                        pass
+                    else:
+                        if i - f[i - 1] > 0 and s[i - f[i - 1] - 1] == '(':
+                            f[i] = f[i - 1] + 2
+                            left = i - f[i - 1] - 1
+                            while left > 0:
+                                if f[left - 1] == 0:
+                                    break
+                                else:
+                                    f[i] += f[left - 1]
+                                    left = left - f[left - 1]
 
-        combined = True
-
-        while combined is True:
-            combined = False
-            n_pairs = []
-
-            i = 0
-            lp = len(pairs)
-
-            while i < lp:
-                pair = pairs[i]
-                left = pair[0]
-                right = pair[1]
-
-                # ( $pair )
-                if left > 0 and right < ls - 1 and s[left - 1] == '(' and s[right + 1] == ')':
-                    n_pairs.append((left - 1, right + 1))
-                    combined = True
-                # $pair1 $pair2
-                elif i < lp - 1 and right + 1 == pairs[i + 1][0]:
-                    n_pairs.append((left, pairs[i + 1][1]))
-                    i += 1
-                    combined = True
-                else:
-                    n_pairs.append((left, right))
-                i += 1
-            if combined is True:
-                pairs = n_pairs
-
-        for p in pairs:
-            t = p[1] - p[0] + 1
-            if t > ans:
-                ans = t
+            if f[i] > ans:
+                ans = f[i]
 
         return ans
