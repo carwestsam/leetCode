@@ -5,8 +5,9 @@ class NumArray:
         :type nums: List[int]
         """
         self._length = len(nums)
-        self._tree = [0] * (self._length * 2 + 20)
+        self._tree = [0] * (self._length * 3)
         self._nums = nums
+        # print('init', self._length)
         self._init_tree(0, self._length - 1, 1)
 
     def update(self, i, val):
@@ -29,6 +30,7 @@ class NumArray:
     def _init_tree(self, left, right, idx):
         if left == right:
             self._tree[idx] = self._nums[left]
+            # print(idx)
             return self._tree[idx]
         elif left > right:
             return 0
