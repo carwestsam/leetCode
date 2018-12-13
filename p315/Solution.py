@@ -39,11 +39,12 @@ class Solution:
         head = None
 
         for i in reversed(range(len(nums))):
+            # print(i)
             num = nums[i]
             ans[i] = self.count_smaller(num, head)
             head = self.insert(num, head)
-            if Solution.valid(head) is not True:
-                print("Crashed", i)
+            # if Solution.valid(head) is not True:
+            #     print("Crashed", i)
 
         return ans
 

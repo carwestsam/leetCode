@@ -1,3 +1,4 @@
+import json
 from unittest import TestCase
 
 from p315.Solution import Solution
@@ -13,3 +14,10 @@ class TestSolution(TestCase):
         num_list = [26, 78, 27, 100, 33, 67, 90, 23, 66, 5, 38, 7, 35, 23, 52, 22, 83, 51, 98, 69, 81, 32, 78, 28, 94,
                     13, 2, 97, 3, 76, 99, 51, 9, 21, 84, 66, 65, 36, 100, 41]
         self.assertEqual(sol.raw(num_list), sol.countSmaller(num_list))
+
+    def test_TLE(self):
+        sol = Solution()
+
+        with open('TLE_1.txt', 'r') as file:
+            array = json.loads(file.readline())
+            sol.countSmaller(array)
