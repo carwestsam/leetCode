@@ -15,7 +15,8 @@ class NumArray:
         :type val: int
         :rtype: void
         """
-        pass
+        self._nums[i] = val
+        self._update(i, 0, self._length - 1, 1)
 
     def sumRange(self, i, j):
         """
@@ -49,3 +50,18 @@ class NumArray:
         left_arm = self._sum_tree(target_left, target_right, left, mid, idx * 2)
         right_arm = self._sum_tree(target_left, target_right, mid + 1, right, idx * 2 + 1)
         return left_arm + right_arm
+
+    def _update(self, target, left, right, idx):
+        if left > right:
+            return 0
+        elif target < left or right < target:
+            return self._tree[idx]
+        elif left == right:
+            self._tree[idx] = self._nums[left]
+            return self._tree[idx]
+        else:
+            mid = (left + right) // 2
+            left_arm = self._update(target, left, mid, idx * 2)
+            right_arm = self._update(target, mid + 1, right, idx * 2 + 1)
+            self._tree[idx] = left_arm + right_arm
+            return left_arm + right_arm
