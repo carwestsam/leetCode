@@ -1,3 +1,6 @@
+import os
+
+
 class ListNode:
     def __init__(self, value):
         self.val = value
@@ -22,3 +25,9 @@ def list_to_nodes(val_list):
         pt = n
 
     return head.next
+
+
+def cpath(cf, filename):
+    __location__ = os.path.realpath(
+        os.path.join(os.getcwd(), os.path.dirname(cf)))
+    return os.path.join(__location__, filename)

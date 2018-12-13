@@ -1,7 +1,6 @@
 from unittest import TestCase
 import json
-from itertools import zip_longest
-
+from utils import cpath
 from p307.Solution import NumArray
 
 
@@ -32,7 +31,7 @@ class TestNumArray(TestCase):
 
     def test_special3(self):
         # print("hoo")
-        with open('failed_case_1.txt', 'r') as file:
+        with open(cpath(__file__, 'failed_case_1.txt'), 'r') as file:
             actions = json.loads(file.readline())
             params = json.loads(file.readline())
             num_array = None

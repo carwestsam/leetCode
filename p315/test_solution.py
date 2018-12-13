@@ -1,6 +1,6 @@
 import json
 from unittest import TestCase
-
+from utils import cpath
 from p315.Solution import Solution
 
 
@@ -18,6 +18,6 @@ class TestSolution(TestCase):
     def test_TLE(self):
         sol = Solution()
 
-        with open('TLE_1.txt', 'r') as file:
+        with open(cpath(__file__, 'TLE_1.txt'), 'r') as file:
             array = json.loads(file.readline())
             sol.countSmaller(array)
