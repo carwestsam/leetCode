@@ -4,6 +4,6 @@ python:
 - 3.5.1
 
 script: 
-- python -m unittest discover . "*test_solution.py"
+- python -m unittest discover . "*test_*.py"
 
 
