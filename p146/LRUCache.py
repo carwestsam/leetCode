@@ -47,10 +47,9 @@ class LRUCache:
         if key in self.__keyMap:
             node = self.__keyMap[key]
             self.__delete(node)
-        else:
-            if self.__size == self.__capacity:
-                node = self.__tail.prev
-                self.__delete(node)
+        elif self.__size == self.__capacity:
+            node = self.__tail.prev
+            self.__delete(node)
 
         self.__insert(ListNode(key, value, None, None))
 
