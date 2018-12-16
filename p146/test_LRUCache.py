@@ -75,4 +75,4 @@ class TestLRUCache(TestCase):
                 elif action == 'LRUCache':
                     cache = LRUCache(params[0])
 
-                cache.pr()
+                # cache.pr()
