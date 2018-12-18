@@ -27,14 +27,6 @@ class Solution:
                 tree[i] += 1
                 i += lbs(i)
 
-        def xrange(i, j):
-            if i < 1 or j > size:
-                return -1
-            if i == 1:
-                return sum(j)
-            else:
-                return sum(j) - sum(i-1)
-
         for day in range(size):
             pos = flowers[day]
             left_ahead = sum(pos - k - 2)

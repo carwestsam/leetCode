@@ -12,4 +12,3 @@ class TestSolution(TestCase):
         self.assertEqual(False, sol.backspaceCompare("a#c", "b"))
         self.assertEqual(True, sol.backspaceCompare("nzp#o#g", "b#nzp#o#g"))
 
-
