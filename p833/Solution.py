@@ -22,9 +22,6 @@ class Solution:
 
             i = idx
 
-            # check match source
-            match = False
-
             if S[i:min(i + len(src), len_s)] == src:
                 # matched, need replacement
                 T += tar
