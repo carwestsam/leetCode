@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from p54.Solution import Solution
+from p56.Solution import Solution
 
 
 class Intervel:
