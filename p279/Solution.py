@@ -35,6 +35,4 @@ class Solution(object):
                     if x + y == n:
                         return ans
 
-            print(ans, len(path[side]))
-
         return ans
